@@ -13,7 +13,7 @@ export default class FeedStore {
             // Check to see if this is the initial load or not by checking the array length
             if (this.tweets.length > 1) {
                 // We use the api to only load tweets that are after the latest tweet received
-                const response = await fetch(`http://magiclab-twitter-interview.herokuapp.com/eik-hunter/api?count=${this.loadCount}&afterId=${this.latestTweetId}`);
+                const response = await fetch(`https://magiclab-twitter-interview.herokuapp.com/eik-hunter/api?count=${this.loadCount}&afterId=${this.latestTweetId}`);
                 const newTweets = await response.json();
 
                 this.tweets.unshift(...newTweets);
@@ -26,7 +26,7 @@ export default class FeedStore {
                 }
             } else {
                 // Initial load just grabs the latest tweets
-                const response = await fetch(`http://magiclab-twitter-interview.herokuapp.com/eik-hunter/api?count=${this.loadCount}`);
+                const response = await fetch(`https://magiclab-twitter-interview.herokuapp.com/eik-hunter/api?count=${this.loadCount}`);
 
                 this.tweets = await response.json();
             }
