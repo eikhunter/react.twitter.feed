@@ -1,0 +1,70 @@
+/*
+|--------------------------------------------------------------------------
+| Feed
+|--------------------------------------------------------------------------
+| @namespace: fed-Feed
+|
+*/
+@import "../../../src/styles/app";
+
+.fed-Feed_Inner {
+  @include Grid_Container;
+}
+
+.fed-Feed_Content {
+  position: relative;
+  max-width: 600px;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  border-right: 1px solid var(--Color_Border);
+  border-left: 1px solid var(--Color_Border);
+}
+
+.fed-Feed_Overlay {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: var(--Color_Brand);
+  transition: opacity var(--Global_Transition), visibility var(--Global_Transition);
+
+  .fed-Feed-loaded & {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.fed-Feed_Header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  max-width: 598px;
+  width: 100%;
+  background-color: var(--Color_Brand);
+  padding: 14px var(--Grid_Gutter);
+  border-bottom: 1px solid var(--Color_Border);
+}
+
+.fed-Feed_Title {
+  @include Font_20-24;
+
+  font-weight: 800;
+  color: #fff;
+}
+
+.fed-Feed_Body {
+  padding-top: 54px;
+}
+
+.fed-Feed_Item {
+  border-bottom: 1px solid var(--Color_Border);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}

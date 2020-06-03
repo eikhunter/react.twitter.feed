@@ -1,0 +1,52 @@
+/*
+|--------------------------------------------------------------------------
+| Item
+|--------------------------------------------------------------------------
+| @namespace: fed-
+|
+*/
+.fed-Item {
+  display: flex;
+  padding: 10px var(--Grid_Gutter);
+  color: #fff;
+}
+
+.fed-Item_ImageContainer {
+  flex-shrink: 0;
+  width: 49px;
+  height: 49px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.fed-Item_Image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.fed-Item_Body {
+  margin-left: 10px;
+}
+
+.fed-Item_Meta {
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+
+.fed-Item_Time {
+  color: var(--Color_Blue-light);
+  font-weight: 400;
+
+  &::before {
+    content: '·';
+    padding: 0 5px;
+  }
+}
+
+.fed-Item_Text {
+  font-weight: 400;
+}

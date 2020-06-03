@@ -1,0 +1,145 @@
+/*
+|--------------------------------------------------------------------------
+| WYSIWYG
+|--------------------------------------------------------------------------
+| @namespace: wys-
+|
+*/
+@import "../styles/app";
+
+.wys-WYSIWYG {
+  h1 {
+    @include Font_24-32;
+  }
+
+  h2 {
+    @include Font_20-28;
+  }
+
+  h3  {
+    @include Font_18-34;
+  }
+
+  h4 {
+    @include Font_16-32;
+  }
+
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  h1,
+  h2 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+
+    h4 {
+      margin-top: -5px;
+    }
+  }
+
+  h1,
+  h2 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+
+    h3 {
+      margin-top: -5px;
+    }
+  }
+
+  p {
+    margin-bottom: 10px;
+
+    font-family: var(--Font_Family-karla);
+
+    @include md {
+      margin-bottom: 16px;
+    }
+  }
+
+  ol {
+    padding-left: 8px;
+    counter-reset: item;
+    list-style-type: none;
+
+    li {
+      margin-bottom: 10px;
+
+      &::before {
+        @include Font_16-32;
+
+        content: counters(item, '.') ' ';
+        margin-right: 10px;
+        font-weight: 400;
+        color: var(--Color_Brand);
+        counter-increment: item;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  ul {
+    font-family: var(--Font_Family-karla);
+
+    li {
+      &::before {
+        content: '';
+
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        margin-right: 10px;
+        margin-bottom: 1px;
+
+        background-color: var(--Color_Brand);
+        border-radius: 50%;
+      }
+    }
+  }
+
+  *:first-child {
+    margin-top: 0 !important;
+
+    *:first-child {
+      margin-top: 0 !important;
+    }
+  }
+
+  *:last-child {
+    margin-bottom: 0 !important;
+
+    *:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 20px 0;
+
+    border-radius: var(--Global_Radius);
+
+    @include md {
+      margin: 40px 0;
+    }
+  }
+
+  blockquote {
+    position: relative;
+
+    width: 100%;
+    margin: 20px 0 40px;
+    padding: 36px 50px;
+
+    background:  var(--Color_Brand);
+
+    color: #fff;
+  }
+}
